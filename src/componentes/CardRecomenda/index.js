@@ -60,4 +60,5 @@ function CardRecomenda({titulo, subtitulo, descricao, img}) {
     )
 }
 
+//teste
 export default CardRecomenda
