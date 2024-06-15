@@ -9,11 +9,11 @@ import Favoritos from './rotas/Favoritos';
 
 const GlobalStyle = createGlobalStyle`
 
-  @import url('https://fonts.googleapis.com/css2?family=Playwrite+NL:wght@100..400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
 
   body {
     margin: 0;
-    font-family: "Playwrite NL", cursive;
+    font-family: "Tiny5", sans-serif;
   }
 
   code {

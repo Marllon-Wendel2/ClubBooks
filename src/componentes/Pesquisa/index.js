@@ -4,13 +4,13 @@ import { useState } from 'react'
 import { getLivros } from '../../servicos/livros'
 import { useEffect } from 'react'
 
-const PesquisaContainer = styled.section`
-    background-image: linear-gradient(90deg, #002F52 35%, #326589 165%);
+const PesquisaContainer = styled.div`
+    background-image: linear-gradient(90deg, #D7D97A 35%, #D9C532 165%);
     color: #FFF;
     text-align: center;
-    padding: 85px 0;
-    height: 470px;
-    width: 100%;
+    padding: 60px 0;
+    height: 200px;
+    width: 50%;
 `
 
 const Titulo = styled.h2`
@@ -45,6 +45,17 @@ const Resultado = styled.div`
         border: 1px solid white;
     }
 `
+const Posted = styled.div`
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+`
+const Inicio = styled.section`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+`
 
 function Pesquisa() {
     const [livrosPesquisados, setLivrosPesquisados] = useState([])
@@ -60,27 +71,30 @@ function Pesquisa() {
     }
 
     return (
-        <PesquisaContainer>
-            <Titulo>Já sabe por onde começar?</Titulo>
-            <Subtitulo>Encontre seu livro em nossa estante.</Subtitulo>
-            <Input
-                placeholder="Escreva sua próxima leitura"
-                onBlur={evento => {
-                    const textoDigitado = evento.target.value
+            <PesquisaContainer>
+                <Titulo>Procure algo para comentar!!</Titulo>
+                <Subtitulo>Encontre seu livro em nossa estante e interaja!!.</Subtitulo>
+                <Input
+                    placeholder="Escreva o que está lendo"
+                    onChange={evento => {
+                        const textoDigitado = evento.target.value
 
-                    if(textoDigitado.length > 2) {
-                        const resultadoPesquisa = livros.filter( livro => livro.nome.includes(textoDigitado))
-                        setLivrosPesquisados(resultadoPesquisa)
-                    }
-                }}
-            />
-            { livrosPesquisados.map( livro => (
-                <Resultado>
-                    <img src={livro.src}/>
-                    <p>{livro.nome}</p>
-                </Resultado>
-            ) ) }
-        </PesquisaContainer>
+                        if(textoDigitado.length > 2) {
+                            const resultadoPesquisa = livros.filter( livro => livro.nome.includes(textoDigitado))
+                            setLivrosPesquisados(resultadoPesquisa)
+                        } else {
+                            setLivrosPesquisados([])
+                        }
+                    }}
+                    
+                />
+                { livrosPesquisados.map( livro => (
+                    <Resultado>
+                        <img src={livro.src}/>
+                        <p>{livro.nome}</p>
+                    </Resultado>
+                ) ) }
+            </PesquisaContainer>
     )
 }
 
