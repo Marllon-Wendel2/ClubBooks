@@ -1,0 +1,6 @@
+. {
+    border-radius: 2em;
+    display: block;
+    flex-direction: row;
+    text-transform: uppercase;
+}
