@@ -1,14 +1,18 @@
-import logo from '../../imagens/logo.png'
+import logo from '../../imagens/logo2.png'
 import styled from 'styled-components'
 
 const LogoContainer = styled.div`
     display: flex;
-    font-size: 30px;
+    font-size: 35px;
+    color: FFFFFF;
+    align-items: center;
+    text-align: center;
+    
 `
 
 const LogoImage = styled.img`
     margin-right: 10px;
-    width: 10%;
+    width: 30%
 `
 
 function Logo() {
@@ -18,7 +22,7 @@ function Logo() {
                 src={logo}
                 alt='logo' 
             />
-            <p><strong>CLUB </strong>BOOKS</p>
+            <p><strong>CLUB</strong>BOOKS</p>
        </LogoContainer>
     )
 }

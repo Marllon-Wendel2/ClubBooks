@@ -1,6 +1,4 @@
 . {
-    border-radius: 2em;
-    display: block;
-    flex-direction: row;
-    text-transform: uppercase;
+height: auto;
+width: 100vh;
 }

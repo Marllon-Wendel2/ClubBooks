@@ -5,8 +5,8 @@ import { getLivros } from '../../servicos/livros'
 import { useEffect } from 'react'
 
 const PesquisaContainer = styled.div`
-    background-image: linear-gradient(90deg, #D7D97A 35%, #D9C532 165%);
-    color: #FFF;
+    background-color: #D3D3D3;
+    color: #000080;
     text-align: center;
     padding: 60px 0;
     height: 200px;
@@ -14,7 +14,7 @@ const PesquisaContainer = styled.div`
 `
 
 const Titulo = styled.h2`
-    color: #FFF;
+    color: #000080;
     font-size: 36px;
     text-align: center;
     width: 100%;
@@ -32,6 +32,9 @@ const Resultado = styled.div`
     align-items: center;
     margin-bottom: 20px;
     cursor: pointer;
+    position: absolute;
+    background: #ECF0F1;
+    margin-left: 10% ;
 
     p {
         width: 200px;
@@ -42,7 +45,9 @@ const Resultado = styled.div`
     }
 
     &:hover {
-        border: 1px solid white;
+        border: 2px solid white;
+        background: darkblue;
+        color: #FFFFFF;
     }
 `
 const Posted = styled.div`
@@ -72,15 +77,15 @@ function Pesquisa() {
 
     return (
             <PesquisaContainer>
-                <Titulo>Procure algo para comentar!!</Titulo>
-                <Subtitulo>Encontre seu livro em nossa estante e interaja!!.</Subtitulo>
+                <Titulo>Procure algo para comentar</Titulo>
+                <Subtitulo>Encontre seu livro em nossa estante e interaja</Subtitulo>
                 <Input
                     placeholder="Escreva o que está lendo"
                     onChange={evento => {
                         const textoDigitado = evento.target.value
 
                         if(textoDigitado.length > 2) {
-                            const resultadoPesquisa = livros.filter( livro => livro.nome.includes(textoDigitado))
+                            const resultadoPesquisa = livros.filter( livro => livro.titulo.includes(textoDigitado))
                             setLivrosPesquisados(resultadoPesquisa)
                         } else {
                             setLivrosPesquisados([])
@@ -91,7 +96,7 @@ function Pesquisa() {
                 { livrosPesquisados.map( livro => (
                     <Resultado>
                         <img src={livro.src}/>
-                        <p>{livro.nome}</p>
+                        <p>{livro.titulo}</p>
                     </Resultado>
                 ) ) }
             </PesquisaContainer>

@@ -16,7 +16,7 @@ const Card = styled.div`
 
 const Botao = styled.button`
     background-color: #EB9B00;
-    color: #FFF;
+    color: black;
     padding: 10px 0px;
     font-size: 16px;
     border: none;
@@ -38,6 +38,7 @@ const Subtitulo = styled.h4`
     font-size: 21px;
     font-weight: bold;
     margin: 8px 0;
+    color: black;
 `
 
 const ImgLivro = styled.img`

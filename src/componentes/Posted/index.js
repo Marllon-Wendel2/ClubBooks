@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import { Titulo } from '../Titulos'
 
 const PostedContainer = styled.div`
-    background-image: linear-gradient(90deg, #D7D97A 35%, #D9C532 165%);
-    color: #FFF;
+    background-color: #D3D3D3;
+    color: #000080;
     text-align: center;
     padding: 10px 0;
     height: 300px;
@@ -12,8 +12,8 @@ const PostedContainer = styled.div`
 
 const Titulo2 = styled.h2`
     width: 100%;
-    padding: 30px 0;
-    color: ${props => props.cor || '#000'};
+    padding: 20px 0;
+    color: ${props => props.cor || '#000080'};
     font-size: ${props => props.tamanhoFonte || '18px;'};
     text-align: ${props => props.alinhamento || 'center'};
     margin: 0;
@@ -23,16 +23,19 @@ const Texto = styled.p`
     width: 100%;
     padding: 30px 0;
     lign-item: center;
-    color: ${props => props.cor || '#000'};
+    color: ${props => props.cor || '#FFFFFF'};
     font-size: ${props => props.tamanhoFonte || '18px;'};
     margin: 0;
+    background-color: #2ECC71;
+    border-radius:1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 `
 
 const Conteudo = styled.div`
     padding: 10x 10px;
-    background-color: white;
     margin: 0em 3em;
     border-radius: 2em;
+    
 `
 
 const textoPostado = 
@@ -44,7 +47,7 @@ const textoPostado =
 function Posted() {
     return (
         <PostedContainer>
-            <Titulo2 cor ="F1F1F1" tamanhoFonte = "36px;">
+            <Titulo2 tamanhoFonte = "25px;">
                 Sua postagem mais recente:
             </Titulo2>
             <Conteudo>

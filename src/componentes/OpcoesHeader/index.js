@@ -1,29 +1,49 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import Cookies from 'js-cookie';
 
 const Opcao = styled.li`
-    font-size: 16px;
+    font-size: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     height: 100%;
-    padding: 0 5px;
+    padding: 0px;
     cursor: pointer;
-    min-width: 120px;
+    min-width: 100px;
+    color: #FFFFFF
 `
 
 const Opcoes = styled.ul`
     display: flex;
 `
 
-const textoOpcoes = ['CATEGORIAS', 'FAVORITOS', 'ESTANTE']
+
+const textoOpcoes = ['CATEGORIAS', 'FAVORITOS', 'ESTANTE', 'LOGIN', 'REGISTRAR']
 
 function OpcoesHeader() {
+    const [opcoesHeader, setOpcoes] = useState([])
+    const [logado, setLogado] = useState(false)
+
+    useEffect(() => {
+        const accessToken = Cookies.get('accessToken')
+        setLogado(!!accessToken) //convertendo o valor para bolean
+    }, [])
+
+    useEffect(() => {
+        if(!logado) {
+            setOpcoes(['LOGIN', 'REGISTRAR'])
+        } else {
+            setOpcoes(['CATEGORIAS', 'FAVORITOS', 'ESTANTE', 'LOGOUT'])
+        }
+    }, [logado])
+
     return (
         <Opcoes>
-            { textoOpcoes.map( (texto) => (
-                <Link to={`/${texto.toLowerCase()}`} ><Opcao><p>{texto}</p></Opcao></Link>
+            { opcoesHeader.map( (texto) => (
+                <Link to={`/${texto.toLowerCase()}`} key={texto} ><Opcao><p>{texto}</p></Opcao></Link>
             ) ) }
       </Opcoes>
     )

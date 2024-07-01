@@ -6,6 +6,12 @@ import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Header from './componentes/Header'
 import Favoritos from './rotas/Favoritos';
+import Login from './rotas/LoginRouter';
+import Registrar from './rotas/RegisterRouter';
+import Logout from './componentes/logout/logout';
+import { AuthPrivate } from './PrivateRoute/AuthPrivete';
+import Estante from './rotas/Estante';
+import LivroDetalhe from './rotas/livroDetalhe';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -14,19 +20,23 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: "Tiny5", sans-serif;
+    background-color: #ECF0F1;
   }
 
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
+      color: #fadbfa;
   }
 
   li {
-    list-style: none;    
+    list-style: none;
+    color: #fadbfa;
   }
 
   a {
     text-decoration: none;
+    color: #fadbfa;
   }
 
 `
@@ -39,7 +49,18 @@ root.render(
       <Header />
       <Routes>
         <Route path="/favoritos" element={<Favoritos/>} />
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={ 
+          <AuthPrivate>
+            <Home />
+          </AuthPrivate>} />
+        <Route path="/estante" element={ 
+          <AuthPrivate>
+            <Estante />
+          </AuthPrivate>} />      
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/registrar' element={<Registrar/>}/>
+        <Route path='/logout' element={<Logout/>}/>
+        <Route path='/livro/:id' element={<LivroDetalhe/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -4,10 +4,12 @@ import IconesHeader from '../IconesHeader';
 import styled from 'styled-components';
 import { Link } from "react-router-dom"
 
+
 const HeaderContainer = styled.header`
-        background-color: #D9D6C1;
+        background-color: #000080;
+        width: 100%;
         display: flex;
-        justify-content: center
+        justify-content: center;
 `
 
 function Header () {

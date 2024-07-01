@@ -5,11 +5,14 @@ import styled from 'styled-components'
 const InconesContainer = styled.ul`
     display: flex;
     align-items: center;
+    padding: 0;
+
 
 `
 const InconeContainer = styled.li`
     margin-right:  40px;
     width: 25px;
+    padding: 0;
 `
 const incones = [perfil, sacola]
 
