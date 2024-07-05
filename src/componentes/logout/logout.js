@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Cookies from 'js-cookie';
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Logout() {
     useEffect(() => {
