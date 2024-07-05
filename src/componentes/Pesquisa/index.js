@@ -92,7 +92,7 @@ function Pesquisa() {
                 />
                 { livrosPesquisados.map( livro => (
                     <Resultado onClick={() => {resultClick(livro._id)}}>
-                        <img src={livro.src}/>
+                        <img src={livro.src} alt='capa do livro'/>
                         <p>{livro.titulo}</p>
                     </Resultado>
 
