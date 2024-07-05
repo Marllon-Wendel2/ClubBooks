@@ -1,31 +1,31 @@
-import { Titulo } from '../Titulo'
-import CardRecomenda from '../CardRecomenda'
-import imagemLivro from '../../imagens/livro2.png' 
+import { Titulo } from '../Titulo' 
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
 import { getComentarios } from '../../servicos/comentarios'
+import { useNavigate } from 'react-router-dom'
+import imgFundo from '../../img/Backgroundiphone.jpeg'
 
 const PostCompleto = styled.section`
-    background-color: #ECF0F1;
+    background-image: url(${imgFundo});
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100hz;
 `
 
 const NovosLivrosContainer = styled.div`
     display: flex;
     margin-top: 30px;
     width: 100%;
-    cursor: pointer;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 `
 const ComentariosContainer = styled.div`
     display: flex;
     border-radius: 2em;
     padding: 4em 4em;
-    background-color: #2ECC71;
+    background-color: #52321D;
     margin: 2px 20px 20px 30px;
     width: 40%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -74,13 +74,14 @@ const ComentarioConteudo = styled.div `
 `
 
 const Capa = styled.img `
-    width: 20%;
-    height: 10%;
+    max-width: 100px;
+    max-height: 150px;
     margin-right: 5%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 `
 
-function UltimosLancamentos() {
+function FeedComentarios() {
+    const navigate = useNavigate()
 
     const [comentariosDaAPI, setComentario] = useState([])
     const [comentiosVisiveis, setComentariosVisiveis] = useState({})
@@ -105,6 +106,9 @@ function UltimosLancamentos() {
        setComentario(comentariosDaAPI)
     }
 
+    const handleClick = (id) => {
+        navigate(`/livro/${id}`)
+      }
 
 
     return (
@@ -117,9 +121,10 @@ function UltimosLancamentos() {
             </Titulo>
             <NovosLivrosContainer>
                 {comentariosDaAPI.map( livro => (
-                    <ComentariosContainer key={livro._id}>
+                    livro.comentarios && livro.comentarios.length > 0 && (
+                        <ComentariosContainer key={livro._id}>
                         <Capa src={livro.src}/>
-                    {livro.comentarios.map( (comentario, index) => (
+                    {  livro.comentarios.map( (comentario, index) => (
                         <div key={comentario.autor}>
                             <Usuario><strong>{comentario.autor}</strong> comentou:</Usuario>
                             <TituloLivro>{livro.titulo}</TituloLivro>
@@ -131,15 +136,17 @@ function UltimosLancamentos() {
                             {comentiosVisiveis[livro._id]?.[index] && (
                                 <ComentarioConteudo>
                                     <p>{comentario.conteudo}</p>
+                                    <Button onClick={() => handleClick(livro._id)}>RESPONDER</Button>
                                 </ComentarioConteudo>
                             )}
                         </div>
                     ))}
                     </ComentariosContainer>
+                    )
                 ))}
             </NovosLivrosContainer>
         </PostCompleto>
     )
 }
 
-export default UltimosLancamentos
+export default FeedComentarios

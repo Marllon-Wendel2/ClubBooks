@@ -3,18 +3,21 @@ import styled from 'styled-components'
 import { useState } from 'react'
 import { getLivros } from '../../servicos/livros'
 import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+
 
 const PesquisaContainer = styled.div`
-    background-color: #D3D3D3;
-    color: #000080;
+    background-color: #52321D;
+    color: #FFFFF;
     text-align: center;
     padding: 60px 0;
     height: 200px;
-    width: 50%;
+    width: 100%;
 `
 
 const Titulo = styled.h2`
-    color: #000080;
+    color: #FFFFFF;
     font-size: 36px;
     text-align: center;
     width: 100%;
@@ -33,7 +36,7 @@ const Resultado = styled.div`
     margin-bottom: 20px;
     cursor: pointer;
     position: absolute;
-    background: #ECF0F1;
+    background: #C9935A;
     margin-left: 10% ;
 
     p {
@@ -46,25 +49,15 @@ const Resultado = styled.div`
 
     &:hover {
         border: 2px solid white;
-        background: darkblue;
+        background: #DA6509;
         color: #FFFFFF;
     }
-`
-const Posted = styled.div`
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-`
-const Inicio = styled.section`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
 `
 
 function Pesquisa() {
     const [livrosPesquisados, setLivrosPesquisados] = useState([])
     const [livros, setLivros] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         fetchLivros()
@@ -73,6 +66,10 @@ function Pesquisa() {
     async function fetchLivros() {
         const livrosDaAPI = await getLivros()
         setLivros(livrosDaAPI)
+    }
+
+    function resultClick(id) {
+        navigate(`/livro/${id}`)
     }
 
     return (
@@ -94,10 +91,11 @@ function Pesquisa() {
                     
                 />
                 { livrosPesquisados.map( livro => (
-                    <Resultado>
+                    <Resultado onClick={() => {resultClick(livro._id)}}>
                         <img src={livro.src}/>
                         <p>{livro.titulo}</p>
                     </Resultado>
+
                 ) ) }
             </PesquisaContainer>
     )

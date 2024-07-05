@@ -20,9 +20,6 @@ const Opcoes = styled.ul`
     display: flex;
 `
 
-
-const textoOpcoes = ['CATEGORIAS', 'FAVORITOS', 'ESTANTE', 'LOGIN', 'REGISTRAR']
-
 function OpcoesHeader() {
     const [opcoesHeader, setOpcoes] = useState([])
     const [logado, setLogado] = useState(false)
@@ -36,7 +33,7 @@ function OpcoesHeader() {
         if(!logado) {
             setOpcoes(['LOGIN', 'REGISTRAR'])
         } else {
-            setOpcoes(['CATEGORIAS', 'FAVORITOS', 'ESTANTE', 'LOGOUT'])
+            setOpcoes(['ESTANTE', 'LOGOUT'])
         }
     }, [logado])
 

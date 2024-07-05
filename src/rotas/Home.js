@@ -1,9 +1,7 @@
-import Header from '../componentes/Header'
+
 import Pesquisa from '../componentes/Pesquisa'
-import UltimosLancamentos from '../componentes/UltimosLancamentos'
 import styled from 'styled-components'
-import Posted from '../componentes/Posted'
-import { useEffect } from 'react'
+import FeedComentarios from '../componentes/Feed'
 
 const AppContainer = styled.div`
     width: 100vw;
@@ -14,23 +12,12 @@ const Inicio = styled.div`
   display: flex;
 `
 function Home() {
-  // useEffect(()=> {
-  //   (
-  //     async () => {
-  //       await fetch('http://localhost:8000/login', {
-  //         headers: {'Content-Type': 'application/json'},
-  //         credentials: 'include',
-  //     }
-  //   )();
-  // });
-
   return (
     <AppContainer>
       <Inicio>
       <Pesquisa />
-      <Posted />
       </Inicio>
-      <UltimosLancamentos />
+      <FeedComentarios />
     </AppContainer>
   );
 }

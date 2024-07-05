@@ -5,6 +5,7 @@ import { Navigate, useNavigate } from 'react-router-dom'
 function Logout() {
     useEffect(() => {
         Cookies.remove('accessToken');
+        Cookies.remove('usuario');
         handleNavigation('/login')
     }, [])
 

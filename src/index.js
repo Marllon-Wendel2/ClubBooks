@@ -5,7 +5,6 @@ import reportWebVitals from './reportWebVitals';
 import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Header from './componentes/Header'
-import Favoritos from './rotas/Favoritos';
 import Login from './rotas/LoginRouter';
 import Registrar from './rotas/RegisterRouter';
 import Logout from './componentes/logout/logout';
@@ -48,7 +47,6 @@ root.render(
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/favoritos" element={<Favoritos/>} />
         <Route exact path="/" element={ 
           <AuthPrivate>
             <Home />

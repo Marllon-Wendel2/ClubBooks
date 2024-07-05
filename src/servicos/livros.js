@@ -1,6 +1,16 @@
 import axios from "axios"
 
-const livrosAPI = axios.create({baseURL: "http://localhost:8000/livros"})
+const livrosAPI = axios.create({baseURL: "https://server-booksclub.vercel.app/livros"})
+
+async function postLivro(novoLivro) {
+    const response = await livrosAPI.post('/', JSON.stringify(novoLivro), {
+        method:'POST',
+        credentials: 'include',
+        headers: {'Content-Type': 'application/json'},
+    })
+
+    return response.data
+}
 
 async function getLivros() {
     const response = await livrosAPI.get('/', {
@@ -24,5 +34,6 @@ async function getLivrosPorId(id) {
 
 export {
     getLivros,
-    getLivrosPorId
+    getLivrosPorId,
+    postLivro
 }

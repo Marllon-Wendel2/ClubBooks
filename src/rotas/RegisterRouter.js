@@ -68,7 +68,7 @@ function Registrar() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('http://localhost:8000/usuario', {
+    const response = await fetch('https://server-booksclub.vercel.app/usuario', {
       method:'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
