@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Header from './componentes/header/index.js'
-import Login from './rotas/loginRouter.js';
+import Login from './rotas/LoginRouter.js';
 import Registrar from './rotas/registerRouter.js';
 import Logout from './componentes/logout/logout';
 import { AuthPrivate } from './privateRoute/authPrivade.js';
