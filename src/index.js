@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Home from './rotas/Home.js';
+import Home from './rotas/home.js';
 import reportWebVitals from './reportWebVitals';
 import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Header from './componentes/header/index.js'
-import Login from './rotas/LoginRouter.js';
-import Registrar from './rotas/RegisterRouter.js';
+import Login from './rotas/loginRouter.js';
+import Registrar from './rotas/registerRouter.js';
 import Logout from './componentes/logout/logout';
 import { AuthPrivate } from './privateRoute/authPrivade.js';
-import Estante from './rotas/Estante.js';
-import LivroDetalhe from './rotas/LivroDetalhe.js';
+import Estante from './rotas/estante.js';
+import LivroDetalhe from './rotas/livroDetalhe.js';
 const GlobalStyle = createGlobalStyle`
 
   @import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
