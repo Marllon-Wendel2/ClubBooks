@@ -15,14 +15,14 @@ const Livro = styled.h1`
     font-size: 18px;
     text-transform: uppercase;
     font-weight: 400;
-    color: #DAA520;
+    color: #FFFFFF;
     text-align: center;
 `
 
 const Button = styled.button`
-  background-color: #DAA520
+  background-color: #52321D
   color: #FFFFFF;
-  border: 2px solid #DAA520;
+  border: 2px solid #52321D;
   border-radius: 0px;
   padding: 18px 36px;
   display: inline-block;

@@ -8,12 +8,18 @@ const Opcao = styled.li`
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     height: 100%;
     padding: 0px;
     cursor: pointer;
-    min-width: 100px;
+    width: 100px;
     color: #FFFFFF
+    @media (max-width: 1024px) {
+       width: 4em;
+    }
+    
+    @media (max-width: 724px) {
+       width: 0,2em;
+    }
 `
 
 const Opcoes = styled.ul`

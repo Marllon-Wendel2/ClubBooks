@@ -14,9 +14,11 @@ import LivroDetalhe from './rotas/livroDetalhe';
 const GlobalStyle = createGlobalStyle`
 
   @import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+  @import-normalize;
 
   body {
     margin: 0;
+    padding: 0;
     font-family: "Tiny5", sans-serif;
     background-color: #ECF0F1;
   }

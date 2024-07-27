@@ -6,13 +6,30 @@ const LogoContainer = styled.div`
     font-size: 35px;
     color: FFFFFF;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+    @media (max-width: 724px) {
+       width: 100%;
+    }
     
 `
 
 const LogoImage = styled.img`
     margin-right: 10px;
-    width: 30%
+    width: 30%;
+    @media (max-width: 1024px) {
+        width: 80%;
+        margin-right: 1px;
+        padding:  0;
+    }
+`
+const HeaderTitulo = styled.p`
+    @media (max-width: 1024px) {
+        width: 10%;
+    }
+    
+    @media (max-width: 1024px) {
+        display: none;
+    }
 `
 
 function Logo() {
@@ -22,7 +39,7 @@ function Logo() {
                 src={logo}
                 alt='logo' 
             />
-            <p><strong>CLUB</strong>BOOKS</p>
+            <HeaderTitulo><strong>CLUB</strong>BOOKS</HeaderTitulo>
        </LogoContainer>
     )
 }

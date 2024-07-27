@@ -29,6 +29,10 @@ const ComentariosContainer = styled.div`
     margin: 2px 20px 20px 30px;
     width: 40%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    @media (max-width: 1024px) {
+        width: 70%;
+    }
 `
 const Usuario = styled.h2 `
     margin: 0 1em;
