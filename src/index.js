@@ -6,11 +6,11 @@ import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Header from './componentes/header/index.js'
 import Login from './rotas/LoginRouter.js';
-import Registrar from './rotas/registerRouter.js';
+import Registrar from './rotas/RegisterRouter.js';
 import Logout from './componentes/logout/logout';
 import { AuthPrivate } from './privateRoute/authPrivade.js';
-import Estante from './rotas/estante.js';
-import LivroDetalhe from './rotas/livroDetalhe';
+import Estante from './rotas/Estante.js';
+import LivroDetalhe from './rotas/LivroDetalhe.js';
 const GlobalStyle = createGlobalStyle`
 
   @import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
