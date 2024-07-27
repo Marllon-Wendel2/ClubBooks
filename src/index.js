@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Home from './rotas/home.js'
+import Home from './rotas/home.js';
 import reportWebVitals from './reportWebVitals';
 import { createGlobalStyle } from 'styled-components'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
