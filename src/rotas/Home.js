@@ -1,7 +1,7 @@
 
-import Pesquisa from '../componentes/Pesquisa'
+import Pesquisa from '../componentes/pesquisa'
 import styled from 'styled-components'
-import FeedComentarios from '../componentes/Feed'
+import FeedComentarios from '../componentes/feed'
 
 const AppContainer = styled.div`
     width: 100%;

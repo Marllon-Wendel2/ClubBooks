@@ -1,4 +1,4 @@
-import { Titulo } from '../Titulo' 
+import { Titulo } from '../titulo' 
 import styled from 'styled-components'
 import { useEffect, useState } from 'react'
 import { getComentarios } from '../../servicos/comentarios'

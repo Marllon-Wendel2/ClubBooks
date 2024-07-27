@@ -1,4 +1,4 @@
-import Input from '../Input'
+import Input from '../input'
 import styled from 'styled-components'
 import { useState } from 'react'
 import { getLivros } from '../../servicos/livros'
