@@ -16,10 +16,6 @@ const Opcao = styled.li`
     @media (max-width: 1024px) {
        width: 4em;
     }
-    
-    @media (max-width: 724px) {
-       width: 0,2em;
-    }
 `
 
 const Opcoes = styled.ul`
@@ -39,7 +35,7 @@ function OpcoesHeader() {
         if(!logado) {
             setOpcoes(['LOGIN', 'REGISTRAR'])
         } else {
-            setOpcoes(['ESTANTE', 'LOGOUT'])
+            setOpcoes(['HOME', 'ESTANTE', 'LOGOUT'])
         }
     }, [logado])
 

@@ -9,9 +9,6 @@ const HeaderContainer = styled.header`
         background-color: #C9935A;
         display: flex;
         justify-content: center;
-        @media (max-width: 724px) {
-        width: 123%;
-    }
 `
 
 function Header () {

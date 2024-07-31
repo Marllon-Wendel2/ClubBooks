@@ -19,17 +19,18 @@ const LogoImage = styled.img`
     @media (max-width: 1024px) {
         width: 80%;
         margin-right: 1px;
-        padding:  0;
+        padding: 0;
+        display: block;
     }
 `
 const HeaderTitulo = styled.p`
-    @media (max-width: 1024px) {
+    margin: 0;
+
+    @media screen and (max-width: 1024px) {
         width: 10%;
-    }
-    
-    @media (max-width: 1024px) {
         display: none;
     }
+
 `
 
 function Logo() {

@@ -11,6 +11,10 @@ const PostCompleto = styled.section`
     display: flex;
     flex-direction: column;
     height: 100hz;
+
+    @media screen and (max-width: 724px) {
+    width: 100%;
+    }
 `
 
 const NovosLivrosContainer = styled.div`
@@ -20,6 +24,7 @@ const NovosLivrosContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
 `
 const ComentariosContainer = styled.div`
     display: flex;
@@ -33,6 +38,10 @@ const ComentariosContainer = styled.div`
     @media (max-width: 1024px) {
         width: 70%;
     }
+    
+     @media screen and (max-width: 724px) {
+    width: 60%;
+    }
 `
 const Usuario = styled.h2 `
     margin: 0 1em;
@@ -40,6 +49,10 @@ const Usuario = styled.h2 `
     color: white;
     text-transform: uppercase;
     font-weight: 400;
+
+     @media screen and (max-width: 724px) {
+        font-size: 16px
+    }
 `
 
 const TituloLivro = styled.h3 `
@@ -67,6 +80,10 @@ const Button = styled.button`
         box-shadow: inset 0 0 0 50px #000080;
         color: white;
         }
+    
+    @media screen and (max-width: 724px) {
+        font-size: 10px
+    }
 `
 const ComentarioConteudo = styled.div `
     background-color: #A3E4D7;
@@ -75,6 +92,17 @@ const ComentarioConteudo = styled.div `
     margin: 5%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 2em;
+
+    @media screen and (max-width: 724px) {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        padding-left: 4em;
+        margin: 0;
+        position: absolute;
+    }
 `
 
 const Capa = styled.img `

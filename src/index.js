@@ -11,6 +11,7 @@ import Logout from './componentes/logout/logout';
 import { AuthPrivate } from './privateRoute/authPrivade.js';
 import Estante from './rotas/estante.js';
 import LivroDetalhe from './rotas/livroDetalhe.js';
+import UsuarioPage from './rotas/usuarioPage.js';
 const GlobalStyle = createGlobalStyle`
 
   @import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
@@ -60,6 +61,8 @@ root.render(
         <Route path='/registrar' element={<Registrar/>}/>
         <Route path='/logout' element={<Logout/>}/>
         <Route path='/livro/:id' element={<LivroDetalhe/>}/>
+        <Route path='/home' element={<Home/>} />
+        <Route path='/usuario/:nome-do-usuario' element= {<UsuarioPage/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
