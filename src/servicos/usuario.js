@@ -1,6 +1,9 @@
 import axios from "axios"
 
-const usuarioAPI = axios.create({baseURL: "https://server-booksclub.vercel.app/usuario"})
+const usuarioAPI = axios.create({
+    baseURL: "https://server-booksclub.vercel.app/usuario",
+    withCredentials: true
+})
 
 async function getUsuario(usuario) {
     const response = await usuarioAPI.get(`/${usuario}`, {
