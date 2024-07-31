@@ -77,7 +77,7 @@ function Pesquisa() {
                 <Titulo>Procure algo para comentar</Titulo>
                 <Subtitulo>Encontre seu livro em nossa estante e interaja</Subtitulo>
                 <Input
-                    placeholder="Escreva o que está lendo"
+                    placeholder="Escreva aqui"
                     onChange={evento => {
                         const textoDigitado = evento.target.value
 

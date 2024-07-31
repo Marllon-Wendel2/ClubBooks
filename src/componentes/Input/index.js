@@ -11,12 +11,22 @@ const Input = styled.input`
     font-size: 16px;
     margin-bottom: 10px;
 
+    @media screen and (max-width: 724px) {
+    width: 60px;
+
+    }
+
     &::placeholder {
             color: #FFF;
             font-size: 12px;
             justify-content: center;
             text-align: center;
+
+        @media screen and (max-width: 724px) {
+            font-size: 10px;
+        }
     }
+    
 `
 
 export default Input

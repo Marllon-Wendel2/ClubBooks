@@ -1,6 +1,7 @@
+import { useNavigate } from 'react-router-dom'
 import perfil from '../../imagens/perfil.svg'
-import sacola from '../../imagens/sacola.svg'
 import styled from 'styled-components'
+import Cookies from 'js-cookie'
 
 const InconesContainer = styled.ul`
     display: flex;
@@ -13,14 +14,24 @@ const InconeContainer = styled.li`
     margin-right:  40px;
     width: 25px;
     padding: 0;
+    cursor: pointer;
 `
-const incones = [perfil, sacola]
+const incones = [perfil]
 
 function IconesHeader () {
+    const navigate = useNavigate()
+    const usuario = Cookies.get('usuario')
+
+    const handleIconClick = () => {
+        if (usuario) {
+            navigate(`/usuario/${usuario}`);
+        }
+    };
+
     return (
         <InconesContainer>
             {incones.map( (img) => (
-                <InconeContainer><img src={img} alt="icones"></img></InconeContainer>
+                <InconeContainer onClick={handleIconClick}><img src={img} alt="icones"></img></InconeContainer>
         ))}
        </InconesContainer>
     )

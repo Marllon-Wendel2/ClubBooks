@@ -31,7 +31,7 @@ const TituloLivro = styled.h3 `
   color: #FFFFFF;
   text-align: center;
 `
-const Capa = styled.img `
+export const Capa = styled.img `
   width: 100%;
   height: auto;
   margin: 2em 0 1em 0;
@@ -68,6 +68,10 @@ const LivrosEstante = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #ECF0F1;
+
+  @media screen and (max-width: 724px) {
+  flex-direction: column;
+}
 `
 const FormContainer = styled.div`
   display: flex;
