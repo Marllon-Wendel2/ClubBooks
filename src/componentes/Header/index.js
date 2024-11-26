@@ -8,7 +8,12 @@ import { Link } from "react-router-dom"
 const HeaderContainer = styled.header`
         background-color: #C9935A;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
+        align-itens: center; 
+        padding: 1em;
+        @media screen and (max-width: 724px) {
+            width: 100%;
+        }
 `
 
 function Header () {

@@ -26,7 +26,6 @@ const Button = styled.button`
   border-radius: 0px;
   padding: 18px 36px;
   display: inline-block;
-  font-family: "Lucida Console", Monaco, monospace;
   font-size: 14px;
   letter-spacing: 1px;
   cursor: pointer;
@@ -47,7 +46,6 @@ const Pagina = styled.section `
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 0;
     background-color: #A3E4D7;
     min-height: 100vh;
     width: 100%;
@@ -144,7 +142,7 @@ function LivroDetalhe() {
 
     useEffect(() => {
         fetchLivro(id)
-    },[id])
+    },[fetchLivro, id])
 
     function fetchComentarios (comentarios) {
         setComentarios(comentarios)

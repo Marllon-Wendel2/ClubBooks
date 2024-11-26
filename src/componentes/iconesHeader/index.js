@@ -6,14 +6,9 @@ import Cookies from 'js-cookie'
 const InconesContainer = styled.ul`
     display: flex;
     align-items: center;
-    padding: 0;
-
-
+    width: 80%;
 `
 const InconeContainer = styled.li`
-    margin-right:  40px;
-    width: 25px;
-    padding: 0;
     cursor: pointer;
 `
 const incones = [perfil]
