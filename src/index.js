@@ -13,20 +13,14 @@ import Estante from './rotas/estante.js';
 import LivroDetalhe from './rotas/livroDetalhe.js';
 import UsuarioPage from './rotas/usuarioPage.js';
 const GlobalStyle = createGlobalStyle`
-
-  @import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
-  @import-normalize;
-
   body {
     margin: 0;
     padding: 0;
-    font-family: "Tiny5", sans-serif;
+    font-family: "Dancing Script", cursive;
     background-color: #ECF0F1;
   }
 
   code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
       color: #fadbfa;
   }
 
@@ -67,9 +61,5 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 

@@ -4,22 +4,18 @@ import { useEffect, useState } from 'react'
 import Cookies from 'js-cookie';
 
 const Opcao = styled.li`
-    font-size: 12px;
+    font-size: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding: 0px;
     cursor: pointer;
     width: 100px;
-    color: #FFFFFF
-    @media (max-width: 1024px) {
-       width: 4em;
-    }
 `
 
 const Opcoes = styled.ul`
     display: flex;
+    gap: 50px;
 `
 
 function OpcoesHeader() {
@@ -35,7 +31,7 @@ function OpcoesHeader() {
         if(!logado) {
             setOpcoes(['LOGIN', 'REGISTRAR'])
         } else {
-            setOpcoes(['HOME', 'ESTANTE', 'LOGOUT'])
+            setOpcoes(['ESTANTE', 'LOGOUT'])
         }
     }, [logado])
 

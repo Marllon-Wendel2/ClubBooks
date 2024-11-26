@@ -71,14 +71,14 @@ function Login() {
 
     try {
       const response = await fetch('https://server-booksclub.vercel.app/login', {
-          method:'POST',
-          headers: {'Content-Type': 'application/json'},
-          credentials: 'include',
-          body: JSON.stringify({
-            usuario: usuario,
-            senha: senha,
-        })
-      });
+        method:'POST',
+        headers: {'Content-Type': 'application/json'},
+        credentials: 'include',
+        body: JSON.stringify({
+          usuario: usuario,
+          senha: senha,
+      })
+    });
       if(!response.ok) {
         throw new Error(`Erro HTTP! status: ${response.status}`)
       }
@@ -86,7 +86,6 @@ function Login() {
       console.log(data)
       Cookies.set('accessToken', data.token, { expires: 1} )
       Cookies.set('usuario', data.usuario, { expires: 1} )
-      alert("login realizado!")
     } catch (erro) {
       return alert('Usuario ou senha invalidos!')
       
